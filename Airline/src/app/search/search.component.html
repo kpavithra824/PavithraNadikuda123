@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xl-9">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2>Search Flight</h2>
+               <div>
+                      <label class="form-label">From Place</label>
+                      <input  [(ngModel)]="SearchModel.fromPlace" class="form-control" type="text" />   
+                  </div>
+                  <div>
+                      <label class="form-label">ToPlace</label>
+                      <input class="form-control" type="text" />                        
+                  </div>
+               <div class="py-4">
+                      <input type="submit"  class="btn btn-primary" value="search Flights" (click)="GetFlightDetails()"  />
+                  </div>                           
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <table class="table caption-top"  >
+    <caption>List of Flights</caption>
+    <thead >
+        <td >AirlineName</td>
+        <td>FlightId</td>
+        <td >FlightNumber</td>
+        <td >FromPlace</td>
+        <td >ToPlace</td>
+        <td>StartDate</td>
+        <td>Price</td>
+        <td>Action</td>
+    </thead>
+    <tr *ngFor="let cust of SearchModels">
+        <td>{{cust.airlineName}}</td>
+        <td>{{cust.flightId}}</td>
+        <td>{{cust.flightNumber}}</td>
+        <td>{{cust.fromPlace}}</td>
+        <td>{{cust.toPlace}}</td>
+        <td>{{cust.startDatetime}}</td>
+        <td>{{cust.ticketPrice}}</td>
+       
+        <td> 
+            <button type="button"  class="btn btn-outline-primary" style="margin:10px" (click)="BookFlight()">Book</button>
+        </td>
+    </tr>
+  </table>
+  
+
+  

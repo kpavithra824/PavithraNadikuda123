@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-xl-9">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2>Flight</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-label">Airline Name</label>
+                        <input [(ngModel)]="FlightModel.airlineName"  class="form-control" type="text" />
+                    </div>
+                    <div class="col-md-4"> 
+                        <label class="form-label">Flight Number</label>
+                        <input [(ngModel)]="FlightModel.flightNumber" class="form-control" type="text" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">FromPlace</label>
+                        <input [(ngModel)]="FlightModel.fromPlace" class="form-control" type="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-label">ToPlace</label>
+                        <input [(ngModel)]="FlightModel.toPlace" class="form-control" type="text" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">StartDatetime</label>
+                        <input [(ngModel)]="FlightModel.startDatetime" class="form-control" type="datetime-local" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">EndDatetime</label>
+                        <input [(ngModel)]="FlightModel.endDatetime" class="form-control" type="datetime-local" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="form-label">ScheduleDays</label>
+                        <input [(ngModel)]="FlightModel.scheduleDays" class="form-control" type="text" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">InstrumentUsed</label>
+                        <input [(ngModel)]="FlightModel.instrumentUsed" class="form-control" type="text" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">BusinessClassSeats</label>
+                        <input [(ngModel)]="FlightModel.businessClassSeats" class="form-control" type="text" />
+                    </div>
+                </div>
+               <div class="row">
+                <div class="col-md-4">
+                    <label class="form-label">NonBusinessClassSeats</label>
+                    <input [(ngModel)]="FlightModel.nonBusinessClassSeats" class="form-control" type="text" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">TicketPrice</label>
+                    <input [(ngModel)]="FlightModel.ticketPrice" class="form-control" type="text" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">NoOfRows</label>
+                    <input [(ngModel)]="FlightModel.noOfRows" class="form-control" type="text" />
+                </div>
+               </div>
+               <div class="row">
+                <div class="col-md-4">
+                    <label class="form-label">Meal</label>
+                    <input [(ngModel)]="FlightModel.meal"  class="form-control" type="text" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">AirlineLogo</label>
+                    <input [(ngModel)]="FlightModel.airlineLogo" class="form-control" type="text" />
+                </div>
+               </div>             
+                <div class="py-4">
+                    <input type="submit" class="btn btn-primary" value="Add Flight" (click)="AddFlight()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

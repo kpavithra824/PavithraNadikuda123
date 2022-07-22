@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-xl-9">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2>PNR</h2>
+                <div class="row">
+                    <div class="col-sm-4" style="align-items: center;"> 
+                        <label class="form-label">PNR </label>
+                        <input [(ngModel)]="SearchPNRModel.pnr" class="form-control" type="text" />
+                    </div>
+
+                    <div class="py-4">
+                        <input type="submit" class="btn btn-primary" value="Search" (click)="SearchPNR()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead >
+        <td >Passenger Name</td>
+        <td>Passenger Age</td>
+        <td >SeatNumber</td>
+        <td >Meal</td>
+        <td >PNR</td>
+        <td>Action</td>
+    </thead>
+    <tbody>
+       
+        <tr *ngFor="let cust of SerachPNRModels">
+            <td>{{cust.passengerName}}</td>
+            <td >{{cust.passengerAge}}</td>
+            <td >{{cust.seatNumber}}</td>
+            <td >{{cust.meal}}</td>
+            <td >{{cust.pnr}}</td>
+            <td> <button type="button" class="btn btn-outline-primary" (click)="DeletePNR(cust)">Delete</button></td>
+        </tr>
+  
+</tbody>
+</table>
+

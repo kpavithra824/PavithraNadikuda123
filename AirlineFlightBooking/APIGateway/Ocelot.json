@@ -1,0 +1,53 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/1.0/flight/admin/findall",
+      "DownstreamScheme": "https",
+      "ServiceName": "AdminService",
+      "UpstreamPathTemplate": "/api/1.0/flight/gateway/admin/findall",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/1.0/flight/airline/register",
+      "DownstreamScheme": "https",
+      "ServiceName": "AirlineService",
+      "UpstreamPathTemplate": "/api/1.0/flight/gateway/airline/register",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/1.0/flight/booking",
+      "DownstreamScheme": "https",
+      "ServiceName": "BookingService",
+      "UpstreamPathTemplate": "/api/1.0/flight/gateway/booking",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/1.0/flight/search",
+      "DownstreamScheme": "https",
+      "ServiceName": "SearchService",
+      "UpstreamPathTemplate": "/api/1.0/flight/gateway/search",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/1.0/flight/ticket",
+      "DownstreamScheme": "https",
+      "ServiceName": "TicketService",
+      "UpstreamPathTemplate": "/api/1.0/flight/gateway/ticket",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    //"BaseUrl": "https://localhost:44335"
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<table class="table table-Danger table-striped-columns" > 
+<h3>List of Flights</h3>
+  <table class="table caption-top" >  
+    <thead class="table-light" >
+        <td >FlightNumber</td>
+        <td>AirlineName</td>
+        <td >StartDatetime</td>
+        <td>EndDatetime</td>
+        <td >Price</td>
+        <td >Meal</td>
+        <td>Action</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cust of ListFlightScheduleModels">
+          <td>{{cust.flightNumber}}</td>
+          <td>{{cust.airlineName}}</td>
+          <td>{{cust.startDatetime}}</td>
+          <td>{{cust.endDatetime}}</td>
+          <td>{{cust.ticketPrice}}</td>
+          <td>{{cust.meal}}</td>
+         <td>
+              <button type="button" (click)="EditFlight(cust)" class="btn btn-outline-primary" style="margin:10px">Edit</button>
+              <button type="button" (click)="DeleteFlight(cust)" class="btn btn-outline-primary" style="margin:10px">Delete</button>
+          </td>
+      </tr>
+  </tbody>
+  </table>

@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-ms-4">
+        <div class="card border-0">
+            <div class="card-body">
+                <h2>Booking</h2>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label class="form-label">Customer Name</label>
+                        <input [(ngModel)]="BookingModel.customerName" class="form-control" type="text" />
+                        </div>
+                    <div class="col-sm-3">
+                        <label class="form-label">EmaildId</label>
+                        <input [(ngModel)]="BookingModel.emailId" class="form-control" type="text" />
+                    </div>
+                    <div class="col-sm-3">  
+                        <label class="form-label">SeatstoBook</label>
+                        <input [(ngModel)]="BookingModel.seatsToBook" class="form-control" type="text" />     
+                    </div>
+                    <div class="col-sm-3" >
+                        <label class="form-label">FlightId</label>
+                        <input [(ngModel)]="BookingModel.flightId" class="form-control" type="text" />
+                    </div>
+                </div>                
+                <div class="row">              
+                    <div class="col-sm-3">
+                        <label class="form-label">BookedOn</label>
+                        <input [(ngModel)]="BookingModel.bookedOn" class="form-control" type="datetime-local" />
+                   </div>              
+                </div>
+                <div class="row">
+                    Passenger Details
+               </div>
+                <div class="row" >
+                    <div class="col-sm-3">
+                        <label class="form-label">PassangerName</label>
+                        <input [(ngModel)]="PassengerModel.passengerName" class="form-control" type="text" />
+                    </div>
+                    <div class="col-sm-3">
+                         <label class="form-label">PassangerAge</label> 
+                        <input [(ngModel)]="PassengerModel.passengerAge" class="form-control" placeholder ="PassengerAge" type="text" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="form-label">Meal</label>
+                        <input [(ngModel)]="PassengerModel.meal" class="form-control" type="text" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="form-label">SeatNumber</label>
+                        <input [(ngModel)]="PassengerModel.seatNumber" class="form-control" type="text" />
+                        </div>
+                </div>
+                <div class="py-4">
+                    <input type="submit" class="btn btn-primary" value="AddPassenger" (click)="AddPassenger()" />
+                </div>              
+                <div class="py-4">
+                    <input type="submit" class="btn btn-primary" value="BookTicket" (click)="AddBooking()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-Danger table-striped-columns" > 
+    <h2>List of Passenger</h2>
+    <table class="table caption-top">
+        <thead class="table-light">
+            <td >Passenger Name</td>
+            <td >Passenger Age</td>
+            <td >Seat Number</td>
+            <td >Meal</td>
+           
+        </thead>
+        <tbody>
+            <tr *ngFor="let cust of PassengerModels">
+                <td >{{cust.passengerName}}</td>
+                <td >{{cust.passengerAge}}</td>
+                <td>{{cust.seatNumber}}</td>
+                <td >{{cust.meal}}</td>
+               
+            </tr>
+        </tbody>
+    </table>
+</table>
+
+<table class="table table-Danger table-striped-columns" > 
+    <h2>List of Booking</h2>
+<table class="table caption-top ">
+    <thead class="table-light">
+        <td class=>Customer Name</td>
+        <td class=>Emaild</td>
+        <td class=>SeatstoBook</td>
+        <td class=>FlightId</td>
+        <td class=>BookedOn</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cust of BookingModels">
+            <td >{{cust.customerName}}</td>
+            <td>{{cust.emailId}}</td>
+            <td>{{cust.seatsToBook}}</td>
+            <td>{{cust.flightId}}</td>
+            <td>{{cust.bookedOn}}</td>
+        </tr>
+    </tbody>
+</table>
+</table> 

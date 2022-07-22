@@ -1,0 +1,73 @@
+
+
+<div class="row">
+    <div class="col-xl-9">
+        <div class="card border-0">
+            <div class="card-body">
+                
+                <h2>Airlines</h2>
+               <form [formGroup]="AirlineModel.formAirlineGroup" >
+                                          
+                  <div class="col-md-4">
+                      <label class="form-label">Airline Name</label>
+                      <input [(ngModel)]="AirlineModel.airlineName" formControlName="AirlineNameControl" class="form-control" type="text" />  
+                      <p style="color:red" [hidden]="!(hasError('required','AirlineNameControl'))" >Airline Name is required</p>
+                  </div>
+                  <div class="col-md-4">
+                      <label class="form-label">Airline Logo</label>
+                      <input   [(ngModel)]="AirlineModel.airlineLogo" formControlName="AirlineLogoControl" class="form-control" type="text" /> 
+                      <p style="color:red"  [hidden]="!(hasError('required','AirlineLogoControl'))" >Airline Logo is required</p>                    
+                  </div>
+                  <div class="col-md-4">
+                      <label class="form-label">Airline Address</label>
+                      <input [(ngModel)]="AirlineModel.address"  formControlName="AirlineAddressControl" class="form-control" type="text" />
+                      <p style="color:red" [hidden]="!(hasError('required','AirlineAddressControl'))" >Airline Address is required</p>                    
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Airline Contact</label>
+                    <input [(ngModel)]="AirlineModel.contact" formControlName="AirlineContactControl" class="form-control" type="text" />
+                    <p style="color:red" [hidden]="!(hasError('required','AirlineContactControl'))" >Airline Contact is required</p>
+                    <p style="color:red"  [hidden]="!(hasError('pattern','AirlineContactControl'))">Airline Contact should be 10 digits</p>                    
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">IsBlock</label>
+                    <input [(ngModel)]="AirlineModel.isBlock" [ngModelOptions]="{standalone: true}" class="form-control" type="text" />
+                </div>
+                  <div class="py-4">
+                      <input type="submit" [disabled]="!(AirlineModel.formAirlineGroup.valid)" class="btn btn-primary" value="Add Airline" (click)="AddAirline()"  />
+                  </div> 
+               </form>                        
+            </div>
+        </div>
+    </div>
+  </div>
+<h3>List of Customers</h3>
+  <table class="table table-bordered border-primary " >  
+    <thead>
+        <td >Airline Name</td>
+        <td >Airline Logo</td>
+        <td>Address</td>
+        <td >Contact</td>
+        <td >IsBlock</td>
+        <td>Action</td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cust of AirlineModels">
+        <td>{{cust.airlineName}}</td>
+        <td>{{cust.airlineLogo}}</td>
+        <td>{{cust.address}}</td>
+        <td>{{cust.contact}}</td>
+        <td>{{cust.isBlock}}</td>
+       <td>
+            <button type="button" (click)="EditAirline(cust)" class="btn btn-outline-primary" style="margin:10px">Edit</button>
+            <button type="button" (click)="DeleteAirline(cust)" class="btn btn-outline-primary" style="margin:10px">Delete</button>
+        </td>
+    </tr>
+</tbody>
+  </table>
+
+  
+  
+ 
+  
+  
